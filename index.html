@@ -1,0 +1,216 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects Links | Mriganga</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#080d1b;--text:#f4f6ff;--muted:#a5b4d6}
+html{scroll-behavior:smooth}
+body{
+  min-height:100vh;background:var(--bg);color:var(--text);
+  font-family:system-ui,-apple-system,Arial,sans-serif;overflow-x:hidden;
+}
+body:before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;
+  background:
+  radial-gradient(ellipse at 10% 0%,#25266a70,transparent 40%),
+  radial-gradient(ellipse at 90% 70%,#102c5c55,transparent 40%);
+}
+nav{
+  height:76px;padding:0 6%;display:flex;align-items:center;
+  justify-content:space-between;
+}
+.logo{font-size:27px;font-weight:900;color:#829cff}
+.menu{font-size:25px;color:#829cff}
+main{width:min(1100px,90%);margin:auto}
+.hero{text-align:center;padding:42px 0 35px;animation:appear .9s ease both}
+.eyebrow{color:#8fa5ff;letter-spacing:3px;font-size:12px;font-weight:700}
+h1{font-size:clamp(38px,7vw,68px);line-height:1.15;margin:15px 0}
+.gradient{
+  background:linear-gradient(90deg,#19e1e7,#777aff,#df7dff);
+  -webkit-background-clip:text;background-clip:text;color:transparent
+}
+.subtitle{font-size:clamp(19px,4vw,29px);color:#a6b7ff;font-style:italic}
+.note{color:#a6b7ff;margin-top:10px;font-size:17px}
+.spark{display:inline-block;color:#91a7ff;animation:twinkle 2s infinite}
+.section-label{margin:0 0 18px;color:#8298c5;font-size:13px;letter-spacing:2px}
+.projects{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;
+  padding:15px 0;
+}
+.project{
+  --accent:#398cff;position:relative;display:flex;align-items:center;
+  gap:16px;min-width:0;padding:23px 18px;
+  border:1px solid var(--accent);border-radius:19px;
+  background:linear-gradient(135deg,#15203aee,#10182cdd);
+  text-decoration:none;color:white;overflow:hidden;
+  transition:transform .3s,border-color .3s,box-shadow .3s;
+  animation:rise .7s both;
+}
+.project:nth-child(2){animation-delay:.08s}
+.project:nth-child(3){animation-delay:.16s}
+.project:nth-child(4){animation-delay:.24s}
+.project:nth-child(5){animation-delay:.32s}
+.project:nth-child(6){animation-delay:.4s}
+.project:before{
+  content:"";position:absolute;width:100px;height:100px;border-radius:50%;
+  background:var(--accent);filter:blur(65px);opacity:.18;right:-30px;top:-30px;
+  transition:opacity .3s;
+}
+.project:hover{
+  transform:translateY(-7px);box-shadow:0 12px 35px #0005,0 0 18px color-mix(in srgb,var(--accent),transparent 75%);
+}
+.project:hover:before{opacity:.5}
+.icon{
+  flex-shrink:0;width:62px;height:62px;border-radius:16px;
+  background:var(--accent);display:grid;place-items:center;
+  font-size:29px;box-shadow:0 5px 25px #0003;
+}
+.info{flex:1;min-width:0;position:relative}
+.info h2{font-size:17px;line-height:1.4;margin-bottom:8px;overflow-wrap:anywhere}
+.info p{font-size:13px;color:var(--muted);line-height:1.7}
+.arrow{font-size:22px;color:white;flex-shrink:0;transition:transform .3s}
+.project:hover .arrow{transform:translateX(5px)}
+.footer-note{text-align:center;padding:38px 0 100px;color:#899edb;font-style:italic}
+footer{
+  position:fixed;right:20px;bottom:15px;z-index:5;
+  padding:8px 13px;border-radius:30px;
+  background:#080d1bdd;backdrop-filter:blur(8px);
+  color:#a8b9ed;font-size:13px;
+}
+footer span{color:#67e8ff;font-weight:700}
+@keyframes rise{
+  from{opacity:0;transform:translateY(24px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@keyframes appear{from{opacity:0}to{opacity:1}}
+@keyframes twinkle{0%,100%{opacity:.4;transform:scale(.8)}50%{opacity:1;transform:scale(1.2)}}
+@media(max-width:850px){.projects{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){
+  nav{height:62px;padding:0 5%}
+  main{width:91%}
+  .hero{padding-top:40px}
+  .projects{grid-template-columns:1fr;gap:14px}
+  .project{padding:18px 15px}
+  .icon{width:55px;height:55px}
+  .footer-note{padding-bottom:95px}
+  footer{right:10px;bottom:10px;font-size:12px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo">&lt;/&gt;</div>
+  <div class="menu" aria-hidden="true">☰</div>
+</nav>
+
+<main>
+  <header class="hero">
+    <div class="eyebrow"><span class="spark">✦</span> MY DIGITAL SPACE <span class="spark">✦</span></div>
+    <h1>Projects <span class="gradient">Links</span></h1>
+    <div class="subtitle">made by me</div>
+    <p class="note">[ Specially used <span class="gradient">AI</span> ]</p>
+  </header>
+
+  <p class="section-label">✦ &nbsp; EXPLORE MY PROJECTS</p>
+  <section class="projects" id="projects"></section>
+
+  <div class="footer-note">
+    <span class="spark">✧</span>
+    &nbsp; More projects coming soon... &nbsp;
+    <span class="spark">✧</span>
+  </div>
+</main>
+
+<footer>handled by <span>Mriganga</span> ♡</footer>
+
+<script>
+/* EDIT YOUR PROJECTS HERE */
+const projects = [
+  {
+    title: "Weather Website",
+    description: "Check live weather updates",
+    url: "https://mriganga8822.github.io/atmos-weather-dashboard/",
+    icon: "🌤️",
+    color: "#398cff"
+  },
+  {
+    title: "AI Project",
+    description: "An experiment made with AI",
+    url: "https://example.com",
+    icon: "🤖",
+    color: "#a442ff"
+  },
+  {
+    title: "My Portfolio",
+    description: "Explore my work and skills",
+    url: "https://example.com",
+    icon: "💻",
+    color: "#00c995"
+  },
+  {
+    title: "Web App",
+    description: "A useful web application",
+    url: "https://example.com",
+    icon: "📱",
+    color: "#ffae32"
+  },
+  {
+    title: "Animation Project",
+    description: "My creative animation work",
+    url: "https://example.com",
+    icon: "🎬",
+    color: "#ff426f"
+  },
+  {
+    title: "My GitHub",
+    description: "More projects and code",
+    url: "https://github.com/",
+    icon: "🐙",
+    color: "#00cce5"
+  }
+];
+
+const container = document.getElementById("projects");
+
+projects.forEach((project, index) => {
+  const link = document.createElement("a");
+  link.className = "project";
+  link.style.setProperty("--accent", project.color);
+  link.style.animationDelay = `${Math.min(index * 0.08, 0.5)}s`;
+  link.href = project.url;
+  link.target = "_blank";
+  link.rel = "noopener noreferrer";
+  link.setAttribute("aria-label", `Open ${project.title}`);
+
+  const icon = document.createElement("div");
+  icon.className = "icon";
+  icon.textContent = project.icon;
+
+  const info = document.createElement("div");
+  info.className = "info";
+
+  const title = document.createElement("h2");
+  title.textContent = project.title;
+
+  const description = document.createElement("p");
+  description.textContent = project.description;
+
+  const arrow = document.createElement("span");
+  arrow.className = "arrow";
+  arrow.textContent = "→";
+  arrow.setAttribute("aria-hidden", "true");
+
+  info.append(title, description);
+  link.append(icon, info, arrow);
+  container.appendChild(link);
+});
+</script>
+</body>
+</html>
