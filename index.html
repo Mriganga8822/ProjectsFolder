@@ -191,6 +191,288 @@ body.modal-open{overflow:hidden}
   }
   .bubble{display:none}
 }
+
+/* =========================================
+   RETRO 80s/90s CRT ARCADE THEME
+   Original JavaScript and functionality stay
+   unchanged.
+   ========================================= */
+
+:root {
+  --bg: #090c08;
+  --text: #d8ffd0;
+  --muted: #a5bd91;
+  --retro-green: #8cff66;
+  --retro-amber: #ffbd59;
+  --retro-border: #4d7741;
+}
+
+body {
+  background: #090c08;
+  color: var(--text);
+  font-family: "Courier New", monospace;
+  letter-spacing: .3px;
+}
+
+/* CRT glow and subtle horizontal scanlines */
+body:before {
+  background:
+    radial-gradient(ellipse at 50% 0%, #28451b38, transparent 65%),
+    radial-gradient(ellipse at 90% 80%, #5b35151c, transparent 45%);
+}
+
+body:after {
+  opacity: .12;
+  background-image:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0px,
+      transparent 3px,
+      #baffad 4px
+    );
+  background-size: 100% 4px;
+}
+
+/* Floating bubbles become subtle retro particles */
+.bubble {
+  border-color: #8cff6640;
+  background: radial-gradient(
+    circle at 30% 25%,
+    #c8ffad35,
+    #8cff6608 45%,
+    transparent 75%
+  );
+  box-shadow: inset 0 0 12px #8cff6610;
+}
+
+.bubble:after {
+  background: #c8ffad65;
+}
+
+/* Header */
+nav {
+  border-bottom: 1px dashed #42613a;
+}
+
+.logo {
+  color: var(--retro-green);
+  font-family: monospace;
+  text-shadow: 0 0 10px #8cff6660;
+}
+
+.menu {
+  color: var(--retro-amber);
+}
+
+/* Hero section */
+.hero {
+  animation: appear .9s ease both;
+}
+
+.eyebrow {
+  color: var(--retro-amber);
+  font-size: 12px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.spark {
+  color: var(--retro-green);
+  text-shadow: 0 0 8px #8cff66;
+}
+
+h1 {
+  font-family: "Courier New", monospace;
+  font-weight: 900;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+  text-shadow: 3px 3px 0 #344b26;
+}
+
+.gradient {
+  background: none;
+  -webkit-text-fill-color: var(--retro-green);
+  color: var(--retro-green);
+  text-shadow: 0 0 12px #8cff6635;
+}
+
+.subtitle {
+  color: var(--retro-amber);
+  font-style: normal;
+  font-size: clamp(14px, 3vw, 20px);
+}
+
+.note {
+  color: #a9c99a;
+  font-size: 14px;
+}
+
+.section-label {
+  color: var(--retro-green);
+  border-bottom: 1px dashed #42613a;
+  padding-bottom: 12px;
+  font-family: monospace;
+}
+
+/* Retro terminal project cards */
+.project {
+  border: 1px solid var(--retro-border);
+  border-radius: 4px;
+  background: #10170e;
+  box-shadow: 4px 4px 0 #030603;
+  transition:
+    transform .2s ease,
+    border-color .2s ease,
+    box-shadow .2s ease;
+}
+
+.project:before {
+  width: 80px;
+  height: 80px;
+  filter: blur(35px);
+  opacity: .12;
+}
+
+.project:hover {
+  transform: translateY(-4px);
+  border-color: var(--retro-green);
+  box-shadow:
+    4px 6px 0 #030603,
+    0 0 14px #8cff6620;
+}
+
+.project:hover:before {
+  opacity: .3;
+}
+
+.icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 3px;
+  background: #202c19;
+  border: 1px solid var(--accent);
+  box-shadow: inset 0 0 12px #0008;
+  font-size: 25px;
+}
+
+.project:hover .icon {
+  transform: none;
+}
+
+.info h2 {
+  color: var(--retro-green);
+  font-family: "Courier New", monospace;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: -.5px;
+}
+
+.info p {
+  color: #a5bd91;
+  font-size: 12px;
+}
+
+.arrow {
+  color: var(--retro-amber);
+  font-family: monospace;
+}
+
+.project:hover .arrow {
+  transform: translateX(4px);
+}
+
+.project:focus-visible,
+.close-modal:focus-visible,
+.ok-button:focus-visible {
+  outline: 2px dashed var(--retro-green);
+  outline-offset: 4px;
+}
+
+/* Footer */
+.footer-note {
+  color: #9cb98a;
+  font-family: monospace;
+  font-style: normal;
+}
+
+footer {
+  border: 1px solid #42613a;
+  border-radius: 3px;
+  background: #090c08ee;
+  color: #b0cba0;
+  font-family: "Courier New", monospace;
+  box-shadow: 3px 3px 0 #030603;
+}
+
+footer span {
+  color: var(--retro-green);
+  text-shadow: 0 0 7px #8cff6650;
+}
+
+/* Retro construction popup */
+.modal {
+  background: #030603dd;
+}
+
+.modal-box {
+  border: 2px solid var(--retro-amber);
+  border-radius: 4px;
+  background: #10170e;
+  box-shadow: 6px 6px 0 #030603;
+}
+
+.modal-box h2 {
+  color: var(--retro-amber);
+  font-family: "Courier New", monospace;
+  text-transform: uppercase;
+  font-size: 21px;
+}
+
+.modal-box p {
+  color: #c2d5b7;
+  font-family: monospace;
+}
+
+.modal-box .coming-soon {
+  color: var(--retro-green);
+}
+
+.close-modal {
+  color: var(--retro-amber);
+}
+
+.ok-button {
+  background: var(--retro-green);
+  color: #10170e;
+  border: 2px solid #b9ff9f;
+  border-radius: 2px;
+  font-family: "Courier New", monospace;
+  font-weight: 900;
+  text-transform: uppercase;
+  box-shadow: 3px 3px 0 #030603;
+}
+
+.ok-button:hover {
+  transform: translateY(-2px);
+}
+
+/* Keep cards readable on mobile */
+@media(max-width: 520px) {
+  .project {
+    padding: 16px 13px;
+  }
+
+  .icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  h1 {
+    letter-spacing: -1.5px;
+  }
+}
+  
+  
 </style>
 </head>
 
